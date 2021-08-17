@@ -1,11 +1,11 @@
-import { combinedReducers } from "redux";
+import { combineReducers } from "redux";
 
 const songsReducer = () => {
   return [
-    { title: "No Scrubs", duration: "4:05" },
-    { title: "I want it that way", duration: "1:45" },
-    { title: "Is this it", duration: "3:15" },
-    { title: "No love", duration: "3:05" }
+    { title: "No Scrubs", duration: "4:05", id: 1 },
+    { title: "I want it that way", duration: "1:45", id: 2 },
+    { title: "Is this it", duration: "3:15" , id: 3},
+    { title: "No love", duration: "3:05" , id: 4}
   ];
 };
 
@@ -16,7 +16,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
   return selectedSong;
 };
 
-export default combinedReducers({
+export default combineReducers({
   songs: songsReducer,
   selectedSong: selectedSongReducer
-});
+});  // this is a react component
+
